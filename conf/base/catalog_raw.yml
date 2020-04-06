@@ -1,0 +1,15 @@
+raw_ccdm_cust_dtl:
+  type: CSVS3DataSet
+  filepath: cj/RAW_DATA_QC/11a_CCDM_CUST_DTL.csv
+  container_name: mck-321-data
+  credentials: dev_s3
+  load_args: # https://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html
+    sep: ','
+    skiprows: 0
+    skipfooter: 0
+    na_values: ['#NA', 'NA']
+    index: False
+  save_args: # https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.to_csv.html
+    index: False
+    date_format: '%Y/%m/%d %H:%M'
+    decimal: '.'

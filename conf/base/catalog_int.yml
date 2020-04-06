@@ -1,0 +1,12 @@
+int_ccdm_cust_dtl:
+  type: SparkDataSet
+  filepath: s3a://mck-321-data/cj/data_pipeline/01_int/ccdm_cust_dtl
+  credentials: dev_s3
+  file_format: 'parquet'
+  load_args:
+    header: True
+    inferSchema: True
+  save_args:
+    mode: overwrite
+#    partitionBy: month_id
+    header: True
